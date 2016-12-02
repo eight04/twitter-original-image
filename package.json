@@ -1,0 +1,26 @@
+{
+  "name": "twitter-original-image",
+  "version": "0.0.0",
+  "description": "Add ":orig" to twitter images.",
+  "scripts": {
+    "test": "eslint *.js",
+    "preversion": "npm test",
+    "version": "sync-version twitter-original-image.user.js && git add .",
+    "postversion": "git push --follow-tags"
+  },
+  "homepage": "https://github.com/eight04/twitter-original-image",
+  "bugs": {
+    "url": "https://github.com/eight04/twitter-original-image/issues",
+    "email": "eight04@gmail.com"
+  },
+  "license": "MIT",
+  "author": "eight <eight04@gmail.com>",
+  "main": "twitter-original-image.user.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eight04/angular-datetime.git"
+  },
+  "devDependencies": {
+    "sync-version": "^0.1.0"
+  }
+}
