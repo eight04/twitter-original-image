@@ -21,6 +21,6 @@
     "url": "https://github.com/eight04/angular-datetime.git"
   },
   "devDependencies": {
-    "sync-version": "^0.1.0"
+    "sync-version": "^0.2.0"
   }
 }
