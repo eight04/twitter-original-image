@@ -1,7 +1,7 @@
 {
   "name": "twitter-original-image",
   "version": "0.0.0",
-  "description": "Add ":orig" to twitter images.",
+  "description": "Add \":orig\" to twitter images.",
   "scripts": {
     "test": "eslint *.js",
     "preversion": "npm test",
