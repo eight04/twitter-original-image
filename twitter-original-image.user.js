@@ -3,7 +3,7 @@
 // @description Add ":orig" to twitter images.
 // @namespace   eight04.blogspot.com
 // @include     https://twitter.com/*
-// @version     0.1.0
+// @version     0.1.1
 // @license		MIT
 // @supportURL	https://github.com/eight04/twitter-original-image/issues
 // @compatible	Firefox
