@@ -10,24 +10,14 @@
 // @grant       none
 // ==/UserScript==
 
-var id;
 function replace() {
-	var el = document.querySelector("#permalink-overlay [data-item-id]");
-	if (!el) {
-		id = null;
-		return;
-	}
-	var newId = el.dataset.itemId;
-	if (newId == id) {
-		return;
-	}
-	id = newId;
-	
 	var imgs = document.querySelectorAll("#permalink-overlay .AdaptiveMedia img"),
 		img;
 	
 	for (img of imgs) {
-		img.src += ":orig";
+		if (!img.src.endsWith(":orig")) {
+			img.src += ":orig";
+		}
 	}
 }
 
