@@ -15,5 +15,7 @@ Github
 Changelog
 ---------
 
+* 0.1.1 (Dec 6, 2016)
+	- Tweet id is not reliable to cache image src. E.g. twitter id doesn't change while opening reply tweets.
 * 0.1.0 (Dec 3, 2016)
 	- First release.
