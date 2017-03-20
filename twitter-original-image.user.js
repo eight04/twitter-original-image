@@ -10,20 +10,39 @@
 // @grant       none
 // ==/UserScript==
 
-function replace() {
-	var imgs = document.querySelectorAll("#permalink-overlay .AdaptiveMedia img"),
-		img;
-	
-	for (img of imgs) {
-		if (!img.src.endsWith(":orig")) {
-			img.src += ":orig";
+if (location.hostname == "twitter.com") {	
+	var replace = () => {
+		var imgs = document.querySelectorAll("#permalink-overlay .AdaptiveMedia img"),
+			img;
+		
+		for (img of imgs) {
+			if (!img.src.endsWith(":orig")) {
+				img.src += ":orig";
+			}
 		}
-	}
+	};
+	
+	replace();
+
+	new MutationObserver(replace).observe(document.querySelector("#permalink-overlay"), {
+		childList: true,
+		subtree: true
+	});
+} else {
+	var replace = () => {
+		var img, match;
+		for (img of document.images) {
+			if ((match = img.src.match(/\/\/pbs\.twimg\.com\/media\/([a-z0-9]+)\.(jpg|gif|png)(:[a-z]+)?/i))) {
+				if (match[3] == ":orig") continue;
+				img.src = `//pbs.twimg.com/media/${match[1]}.${match[2]}:orig`;
+			}
+		}
+	};
+	
+	replace();
+	
+	new MutationObserver(replace).observe(document.body, {
+		childList: true,
+		subtree: true
+	});
 }
-
-replace();
-
-new MutationObserver(replace).observe(document.querySelector("#permalink-overlay"), {
-	childList: true,
-	subtree:true
-});
