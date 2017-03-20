@@ -10,8 +10,9 @@
 // @grant       none
 // ==/UserScript==
 
+var replace
 if (location.hostname == "twitter.com") {	
-	var replace = () => {
+	replace = () => {
 		var imgs = document.querySelectorAll("#permalink-overlay .AdaptiveMedia img"),
 			img;
 		
@@ -29,7 +30,7 @@ if (location.hostname == "twitter.com") {
 		subtree: true
 	});
 } else {
-	var replace = () => {
+	replace = () => {
 		var img, match;
 		for (img of document.images) {
 			if ((match = img.src.match(/\/\/pbs\.twimg\.com\/media\/([a-z0-9]+)\.(jpg|gif|png)(:[a-z]+)?/i))) {
